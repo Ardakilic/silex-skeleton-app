@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Silex Skeleton App version 0.1.0
+ * https://github.com/Ardakilic/silex-skeleton-app
+ * Arda Kilicdagi <arda@kilicdagi.com>
+ */
+
+require_once __DIR__ . '/bootstrap.php';
+
+use Symfony\Component\Console\Application;
+
+use App\Commands\GreetCommand;
+
+//PHPMig commands
+use Phpmig\Console\Command;
+
+$application = new Application("Hodor", '0.1.0');
+
+//Let's import PHPMig's commands into our own Application
+$phpmig_commands = [
+    new Command\CheckCommand(),
+    new Command\DownCommand(),
+    new Command\GenerateCommand(),
+    new Command\InitCommand(),
+    new Command\MigrateCommand(),
+    new Command\RedoCommand(),
+    new Command\RollbackCommand(),
+    new Command\StatusCommand(),
+    new Command\UpCommand(),
+];
+foreach ($phpmig_commands as $command) {
+    $command->setName('phpmig:' . $command->getName());
+}
+$application->addCommands($phpmig_commands);
+
+//Custom commands
+$application->add(new GreetCommand());
+
+//Run it
+$application->run();
