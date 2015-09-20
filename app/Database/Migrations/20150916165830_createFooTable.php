@@ -20,7 +20,7 @@ class CreateFooTable extends Migration
     public function init()
     {
         $this->table = 'foo';
-        $this->schema = $this->get('foo');
+        $this->schema = $this->get('schema');
     }
 
     /**
