@@ -23,7 +23,7 @@ if ($app['debug']) {
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
 
-    //Make sure class exists,
+    //Make sure the class exists,
     //because this is a dev-dependency and may not be installed
     if (class_exists('Whoops\\Provider\\Silex\\WhoopsServiceProvider')) {
         $app->register(new Whoops\Provider\Silex\WhoopsServiceProvider());
@@ -38,7 +38,7 @@ $app['config'] = $app->share(function () {
 //This is for proper time handling:
 date_default_timezone_set($app['config']['settings']['timezone']);
 
-$app['clients.trakt'] = $app->share(function () use ($app) {
+$app['clients.guzzle'] = $app->share(function () use ($app) {
     //Fill with your default parameters such as base_uri etc. of course
     return new Client();
 });
