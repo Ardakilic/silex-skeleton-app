@@ -15,6 +15,7 @@ use GuzzleHttp\Client;
 
 //Create the Silex instance
 $app = new Application();
+
 //Enable debugging
 $app['debug'] = true;
 

@@ -10,7 +10,7 @@ require_once __DIR__ . '/../bootstrap.php';
 
 use App\Models\Foo;
 
-//Raw route example:
+//Closure route example:
 $app->get('eloquent', function () use ($app) {
 
     dump(Foo::all());

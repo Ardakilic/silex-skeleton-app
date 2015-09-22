@@ -9,6 +9,7 @@
     "silex",
     "laravel",
     "eloquent",
+    "skeleton",
     "phpmig",
     "migration",
     "hodor"
@@ -38,6 +39,14 @@
     "psr-4": {
       "App\\": "app/"
     }
+  },
+  "suggest": {
+    "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.4).",
+    "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
+    "iron-io/iron_mq": "Required to use the iron queue driver (~2.0).",
+    "league/flysystem": "Abstraction for local and remote filesystems (~1.0).",
+    "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
+    "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0)."
   },
   "config": {
     "bin-dir": "bin/"
